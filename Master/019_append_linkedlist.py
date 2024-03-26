@@ -1,22 +1,23 @@
+
 class Node:
     def __init__(self, data):
-        self.ref = None
         self.data = data
-    
-class Linked_List:
+        self.ref = None
+
+class Linked_list:
     def __init__(self):
         self.head = None
 
-    def print_ll(self):
+    def print(self):
         if self.head is None:
-            print("Empty")
+            print("Linked list is empty...!")
         else:
             n = self.head
             while n is not None:
                 print(n.data)
                 n = n.ref
 
-    def prepend(self, data):
+    def append(self, data):
         new_node = Node(data)
         if self.head is None:
             self.head = new_node
@@ -24,12 +25,12 @@ class Linked_List:
             n = self.head
             while n.ref is not None:
                 n = n.ref
-
             n.ref = new_node
 
-l1 = Linked_List()
-l1.prepend(1)
-l1.prepend(10)
-l1.prepend(100)
-l1.prepend(1000)
-l1.print_ll()
+L1 = Linked_list()
+L1.append(10)
+L1.append(20)
+L1.append(30)
+L1.print()
+
+ 
