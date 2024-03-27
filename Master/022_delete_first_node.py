@@ -1,20 +1,21 @@
-# Add node at the end using loop to reach at the end
+# Deleting the first node if present
+
 class Node:
     def __init__(self, data):
         self.data = data
         self.ref = None
 
-class Linked_list:
+class Linked_List:
     def __init__(self):
         self.head = None
 
     def print(self):
         if self.head is None:
-            print("Linked list is empty...!")
+            print("Empty...!")
         else:
             n = self.head
             while n is not None:
-                print(n.data)
+                print(f"{n.data} --->", end= " " )
                 n = n.ref
 
     def append(self, data):
@@ -27,10 +28,20 @@ class Linked_list:
                 n = n.ref
             n.ref = new_node
 
-L1 = Linked_list()
+    def delete_begin(self):
+        if self.head is None:
+            print("Empty....!")
+        else:
+            self.head = self.head.ref
+
+
+L1 = Linked_List()
 L1.append(10)
 L1.append(20)
 L1.append(30)
 L1.print()
+print("\n")
 
  
+L1.delete_begin() # Calling delete
+L1.print()

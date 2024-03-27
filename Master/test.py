@@ -1,22 +1,27 @@
+
+
 class Node:
     def __init__(self, data):
-        self.ref = None
         self.data = data
-    
+        self.ref = None
+
+
 class Linked_List:
     def __init__(self):
         self.head = None
 
+
     def print_ll(self):
         if self.head is None:
-            print("Empty")
+            print("Empty...!")
         else:
             n = self.head
-            while n is not None:
-                print(n.data)
+            while n.ref is not None:
+                print(f"{n.data} --->", end=" ")
                 n = n.ref
 
-    def prepend(self, data):
+
+    def append(self, data):
         new_node = Node(data)
         if self.head is None:
             self.head = new_node
@@ -24,12 +29,39 @@ class Linked_List:
             n = self.head
             while n.ref is not None:
                 n = n.ref
-
             n.ref = new_node
 
-l1 = Linked_List()
-l1.prepend(1)
-l1.prepend(10)
-l1.prepend(100)
-l1.prepend(1000)
-l1.print_ll()
+
+    # This method is used to insert a node after x
+    def after(self, data, x):
+        n = self.head
+        
+        while n.ref is not None:
+            if n.data == x:
+                new_node = Node(data)
+                new_node.ref = n.ref
+                n.ref = new_node
+                return
+            n = n.ref
+
+        print("Search not found...!")
+           
+
+
+
+
+l = Linked_List()
+l.print_ll()
+l.append(10)
+l.append(20)
+l.append(30)
+l.append(40)
+l.print_ll()
+
+
+
+
+# Here adding 25 after the element 20
+l.after(25, 20)
+print("\n") # Adding a new line
+l.print_ll()
