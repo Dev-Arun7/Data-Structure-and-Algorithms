@@ -32,7 +32,7 @@ class Linked_List:
         n = self.head
         if self.head is None:
             print("Empty....!")
-        elif x == n.data:    # Cheching given value is in first node.
+        elif x == n.data:    # Checking given value is in first node.
             self.head = n.ref
         else:
             while n.ref is not None:

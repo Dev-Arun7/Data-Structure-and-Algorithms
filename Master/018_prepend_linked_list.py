@@ -22,8 +22,11 @@ class Linked_List:
         self.head = new_node
 
 
+
+nums = [ 11, 22, 55, 66, 77]
 L1 = Linked_List()
-L1.prepend(10)
-L1.prepend(20)
-L1.prepend(30)
+
+
+for i in nums:
+    L1.prepend(i)
 L1.print()
