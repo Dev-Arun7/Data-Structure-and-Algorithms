@@ -8,7 +8,7 @@ class Stack:
 		self.q2 = []
 
 	def push(self, data):
-		# Push x first in empty q2
+		# Push data first in empty q2
 		self.q2.append(data)
 
 		# Push all the remaining

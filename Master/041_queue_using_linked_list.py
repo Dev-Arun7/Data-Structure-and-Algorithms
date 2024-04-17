@@ -28,7 +28,7 @@ class Queue:
     # Method to remove an element from front side
     def DeQueue(self):
         if self.isempty():
-            return
+            return None
         else:
             temp = self.front
             self.front = temp.next
@@ -36,6 +36,7 @@ class Queue:
             # Handles when nodes are empty
             if self.front == None:
                 self.rear = None
+            return temp.data
 
 
 
