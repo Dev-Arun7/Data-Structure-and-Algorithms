@@ -54,5 +54,3 @@ print("Min Heap:")
 while min_heap.heap:
     print(min_heap.extract_min(), end=" ")
 
-
-

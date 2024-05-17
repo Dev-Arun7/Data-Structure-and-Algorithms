@@ -30,11 +30,29 @@ class BST:
             else:
                 self.right.insert(data) # If exist, recursion
             return
+     
+    def search(self, data):
+        if self.key == data:
+            print("Node is found")
+            return
+        if data < self.key:
+            if self.left:
+                self.left.search(data)
+            else:
+                print("Node is not present...!")
+        else:
+            if self.right:
+                self.right.search(data)
+            else:
+                print("Node is not present...!")
+
 
 # Driver code
 r = BST(10)
 my_list = [12, 56, 2, 7, 8]
 for i in my_list:
     r.insert(i)
+
+r.search(12)
 
 
